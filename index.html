@@ -9,9 +9,11 @@
 
 <body>
     <h1>Hello World</h1>
-    <div id="ggb-element"></div>
+    <div id="ggb-graphing"></div>
+    <div id="ggb-geometry"></div>
+    <div id="ggb-3d"></div>
     <script>
-        var ggbApp = new GGBApplet({
+        const ggbAppGraphing = new GGBApplet({
             "appName": "graphing",
             "width": 800,
             "height": 600,
@@ -19,8 +21,26 @@
             "showAlgebraInput": true,
             "showMenuBar": true
         }, true);
-        window.addEventListener("load", function () {
-            ggbApp.inject('ggb-element');
+        const ggbAppGeometry = new GGBApplet({
+            "appName": "geometry",
+            "width": 800,
+            "height": 600,
+            "showToolBar": true,
+            "showAlgebraInput": true,
+            "showMenuBar": true
+        }, true);
+        const ggbApp3d = new GGBApplet({
+            "appName": "3d",
+            "width": 800,
+            "height": 600,
+            "showToolBar": true,
+            "showAlgebraInput": true,
+            "showMenuBar": true
+        }, true);
+        window.addEventListener("load", () => {
+            ggbAppGraphing.inject('ggb-graphing');
+            ggbAppGeometry.inject('ggb-geometry');
+            ggbApp3d.inject('ggb-3d');
         });
     </script>
 </body>
